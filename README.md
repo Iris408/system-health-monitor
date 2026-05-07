@@ -13,9 +13,6 @@ A Python-based command-line tool that monitors system health metrics such as CPU
 - Refreshes automatically every 5 seconds
 - Handles clean shutdown with `Ctrl + C`
 
-## Screenshot
-
-<img src="./screenshot.png" width="700">
 
 ## Technologies & Tools
 
