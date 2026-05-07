@@ -13,6 +13,10 @@ A Python-based command-line tool that monitors system health metrics such as CPU
 - Refreshes automatically every 5 seconds
 - Handles clean shutdown with `Ctrl + C`
 
+## Screenshot
+
+![System Health Monitor Screenshot](screenshot.png)
+
 ## Technologies & Tools
 
 - Python
@@ -37,7 +41,3 @@ system-health-monitor/
 ├── README.md
 ├── requirements.txt
 └── main.py
-
-## Screenshot
-
-![System Health Monitor Screenshot](screenshot.png)
