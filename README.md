@@ -15,7 +15,7 @@ A Python-based command-line tool that monitors system health metrics such as CPU
 
 ## Screenshot
 
-![System Health Monitor Screenshot](./screenshot.png)
+<img src="./screenshot.png" width="700">
 
 ## Technologies & Tools
 
