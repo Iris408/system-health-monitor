@@ -7,9 +7,13 @@ from colorama import Fore, Style, init
 
 init(autoreset=True)
 
+# EN: CPU warning threshold
+# JP: CPU警告しきい値
+# KR: CPU 경고 임계값
+
 LOG_FILE = "logs/health_log.txt"
-WARNING_THRESHOLD = 70
-CRITICAL_THRESHOLD = 90
+WARNING_THRESHOLD = 60
+CRITICAL_THRESHOLD = 80
 REFRESH_INTERVAL = 5
 
 def get_cpu_usage():
