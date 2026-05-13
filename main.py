@@ -4,6 +4,9 @@ import time
 from datetime import datetime
 from colorama import Fore, Style, init
 
+# EN: Warning message helper
+# JP: 警告メッセージ関数
+# KR: 경고 메시지 함수
 
 init(autoreset=True)
 
@@ -12,9 +15,13 @@ init(autoreset=True)
 # KR: CPU 경고 임계값
 
 LOG_FILE = "logs/health_log.txt"
-WARNING_THRESHOLD = 60
-CRITICAL_THRESHOLD = 80
+OK_THRESHOLD = 45
+WARNING_THRESHOLD = 75
+CRITICAL_THRESHOLD = 95
 REFRESH_INTERVAL = 5
+
+# JP: CPU 使用率チェック
+# KR: CPU 사용량 확인
 
 def get_cpu_usage():
     return psutil.cpu_percent(interval=1)
@@ -35,19 +42,25 @@ def get_system_uptime():
     uptime_hours = uptime_seconds // 3600
     return int(uptime_hours)
 
+# EN: Check monitoring status
+# JP: モニタリング状態確認
+# KR: 모니터링 상태 확인
 
 def check_status(value):
-    if value < WARNING_THRESHOLD:
-        return "OK"
-    elif value < CRITICAL_THRESHOLD:
-        return "WARNING"
+
+    if value >= CRITICAL_THRESHOLD:
+        return f"CRITICAL: Usage is near full!!"
+
+    elif value >= WARNING_THRESHOLD:
+        return f"WARNING: Usage is over 75%"
+
     else:
-        return "CRITICAL"
+        return f"OK: Usage is below threshold"
 
 def get_status_color(status):
-    if status == "OK":
+    if "OK" in status:
         return Fore.GREEN
-    elif status == "WARNING":
+    elif "WARNING" in status:
         return Fore.YELLOW
     else:
         return Fore.RED

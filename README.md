@@ -1,40 +1,109 @@
 # System Health Monitor
 
-A Python-based command-line tool that monitors system health metrics such as CPU usage, memory usage, disk usage, and system uptime.
+A Python-based system monitoring application that tracks CPU, memory, disk usage, and system uptime with real-time status monitoring and color-coded alerts.
 
-## Features
+---
 
-- Monitors CPU, memory, and disk usage
-- Displays system uptime
-- Uses status levels: OK, WARNING, and CRITICAL
-- Shows colored terminal output
-- Displays visual usage bars
-- Logs system health checks to a file
-- Refreshes automatically every 5 seconds
-- Handles clean shutdown with `Ctrl + C`
+# Features
 
+- Monitor CPU usage
+- Monitor memory usage
+- Monitor disk usage
+- Track system uptime
+- Warning and critical threshold detection
+- Color-coded monitoring output
+- Dynamic status messages
+- Modular helper functions
+- Multilingual code comments (EN/JP/KR)
 
-## Technologies & Tools
+---
+
+# Technologies Used
 
 - Python
 - psutil
 - colorama
+- Git/GitHub
 
-## Skills Demonstrated
+---
 
-- Python scripting
-- System monitoring
-- Terminal application development
-- Logging and file handling
-- Git and GitHub workflow
-- Dependency management
-- Command-line tooling
+# Project Structure
 
-## Project Structure
+```bash
+system-health-monitor/ │ ├── main.py ├── requirements.txt ├── README.md 
+```
 
-```text
-system-health-monitor/
-├── logs/
-├── README.md
-├── requirements.txt
-└── main.py
+---
+
+# Installation
+
+Clone the repository:
+
+```bash
+git clone https://github.com/Iris408/system-health-monitor.git 
+```
+
+Navigate into project:
+
+```bash
+cd system-health-monitor 
+```
+
+Install dependencies:
+
+```bash
+pip install -r requirements.txt 
+```
+
+Run the application:
+
+```bash
+python3 main.py 
+```
+
+---
+
+# Example Output
+
+```plaintext
+System Health Monitor
+----------------------
+
+CPU Usage: 5.9% [OK]
+Memory Usage: 78.4% [WARNING]
+Disk Usage: 8.4% [OK]
+```
+
+---
+
+# Monitoring Logic
+
+| Status | Condition |
+|---|---|
+| OK | Below warning threshold |
+| WARNING | Above warning threshold |
+| CRITICAL | Above critical threshold |
+
+---
+
+# Future Improvements
+
+- Logging support
+- Email or Slack alerts
+- Docker containerization
+- Configurable thresholds
+- Historical monitoring logs
+- Web dashboard
+
+---
+
+# English / 日本語 / 한국어
+
+## EN
+System monitoring application built with Python.
+
+## JP
+Python を使用したシステム監視アプリケーション。
+
+## KR
+Python 기반 시스템 모니터링 애플리케이션.
