@@ -3,6 +3,7 @@ import psutil
 import time
 from datetime import datetime
 from colorama import Fore, Style, init
+from alerts import send_slack_alert
 
 # EN: Warning message helper
 # JP: 警告メッセージ関数
@@ -46,6 +47,7 @@ def get_system_uptime():
 # JP: モニタリング状態確認
 # KR: 모니터링 상태 확인
 
+
 def check_status(value):
 
     if value >= CRITICAL_THRESHOLD:
@@ -56,6 +58,34 @@ def check_status(value):
 
     else:
         return f"OK: Usage is below threshold"
+
+cpu_usage = get_cpu_usage()
+memory_usage = get_memory_usage()
+disk_usage = get_disk_usage()
+
+
+cpu_status = check_status(cpu_usage)
+memory_status = check_status(memory_usage)
+disk_status = check_status(disk_usage)
+
+
+if "WARNING" in cpu_status or "CRITICAL" in cpu_status:
+    send_slack_alert(
+        f"CPU ALERT: {cpu_status}"
+    )
+
+
+if "WARNING" in memory_status or "CRITICAL" in memory_status:
+    send_slack_alert(
+        f"MEMORY ALERT: {memory_status}"
+    )
+
+
+if "WARNING" in disk_status or "CRITICAL" in disk_status:
+    send_slack_alert(
+        f"DISK ALERT: {disk_status}"
+    )
+
 
 def get_status_color(status):
     if "OK" in status:
@@ -72,7 +102,7 @@ def save_to_log(entry):
     with open(LOG_FILE, "a") as file:
         file.write(entry + "\n")
 
-def create_usage_bar(value, bar_length=20):
+def create_usage_bar(value, bar_length=10):
     filled_length = int(bar_length * value / 100)
     empty_length = bar_length - filled_length
 
@@ -100,7 +130,7 @@ def display_system_health():
     current_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 
     print("\nSystem Health Monitor")
-    print("---------------------")
+    print("----------")
     print(f"Checked At: {current_time}")
 
     cpu_log = display_metric("CPU Usage", cpu)
@@ -121,8 +151,8 @@ def display_system_health():
 
 
 def clear_terminal():
-    os.system("clear")
-
+	if os.getenv("TERM"):
+    		os.system("clear")
 
 def main():
     try:
