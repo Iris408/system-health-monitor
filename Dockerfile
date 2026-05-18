@@ -2,7 +2,7 @@
 # JP: Python ベースイメージ
 # KR: Python 기본 이미지
 
-FROM python:3.11
+FROM python:3.11-slim
 
 
 # EN: Set working directory
@@ -12,18 +12,25 @@ FROM python:3.11
 WORKDIR /app
 
 
-# EN: Copy project files
-# JP: プロジェクトファイルコピー
-# KR: 프로젝트 파일 복사
+# EN: Copy requirements file
+# JP: requirementsファイルコピー
+# KR: requirements 파일 복사
 
-COPY . .
+COPY requirements.txt .
 
 
 # EN: Install dependencies
 # JP: 依存関係インストール
 # KR: 의존성 설치
 
-RUN pip install -r requirements.txt
+RUN pip install --no-cache-dir -r requirements.txt
+
+
+# EN: Copy project files
+# JP: プロジェクトファイルコピー
+# KR: 프로젝트 파일 복사
+
+COPY . .
 
 
 # EN: Run application

@@ -29,6 +29,17 @@ A Python-based system monitoring application that tracks CPU, memory, disk usage
 
 ---
 
+# Docker Support
+
+Run with Docker:
+
+```bash
+docker build -t system-health-monitor .
+docker run system-health-monitor
+```
+
+---
+
 # Project Structure
 
 ```bash
