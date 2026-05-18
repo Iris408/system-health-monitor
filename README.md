@@ -21,6 +21,8 @@ A Python-based system monitoring application that tracks CPU, memory, disk usage
 # Technologies Used
 
 - Python
+- Docker
+- Slack
 - psutil
 - colorama
 - Git/GitHub
@@ -86,14 +88,23 @@ Disk Usage: 8.4% [OK]
 
 ---
 
+# Recent Improvements
+
+- Added Docker support
+- Added Slack alert integration
+- Improved terminal compatibility
+- Refined monitoring display formatting
+
+---
+
 # Future Improvements
 
-- Logging support
-- Email or Slack alerts
-- Docker containerization
-- Configurable thresholds
-- Historical monitoring logs
-- Web dashboard
+- Email alerts
+- Cloud deployment
+- Configurable alert thresholds
+- Historical logging
+- Grafana-style metrics dashboard
+- FastAPI Web dashboard
 
 ---
 
