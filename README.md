@@ -4,7 +4,7 @@ A Python-based system monitoring application that tracks CPU, memory, disk usage
 
 ---
 
-# Features | 機能 | 기능
+## Features | 機能 | 기능
 
 - CPU, memory, disk, and uptime monitoring
 - Warning and critical threshold detection
@@ -19,7 +19,7 @@ A Python-based system monitoring application that tracks CPU, memory, disk usage
 
 ---
 
-# Tech Stack | 技術スタック | 기술 스택
+## Tech Stack | 技術スタック | 기술 스택
 
 - Python
 - FastAPI
@@ -44,7 +44,7 @@ python3 main.py
 
 ---
 
-# Recent Improvements
+## Recent Improvements
 
 - Added Docker container support
 - Added Slack alert integration
