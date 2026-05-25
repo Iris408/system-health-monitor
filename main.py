@@ -1,4 +1,6 @@
 import os
+from dotenv import load_dotenv
+
 import psutil
 import time
 from datetime import datetime
@@ -6,6 +8,8 @@ from colorama import Fore, Style, init
 from alerts import send_slack_alert
 from email_alerts import send_email_alert
 from logger import log_status, log_alert
+
+load_dotenv()
 
 
 # EN: Warning message helper
@@ -20,10 +24,15 @@ init(autoreset=True)
 # KR: CPU 경고 임계값
 
 LOG_FILE = "logs/health_log.txt"
-OK_THRESHOLD = 45
-WARNING_THRESHOLD = 75
-CRITICAL_THRESHOLD = 95
-REFRESH_INTERVAL = 5
+
+# EN: Load configurable monitoring thresholds from environment variables
+# JP: 環境変数から監視しきい値を読み込む
+# KR: 환경 변수에서 모니터링 임계값 불러오기
+
+OK_THRESHOLD = int(os.getenv("OK_THRESHOLD",45))
+WARNING_THRESHOLD = int(os.getenv("WARNING_THRESHOLD", 75))
+CRITICAL_THRESHOLD = int(os.getenv("CRITICAL_THRESHOLD", 95))
+REFRESH_INTERVAL = int(os.getenv("REFRESH_INTERVAL", 5))
 
 
 # EN: CPU usage check
