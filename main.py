@@ -5,12 +5,15 @@ from datetime import datetime
 from colorama import Fore, Style, init
 from alerts import send_slack_alert
 from email_alerts import send_email_alert
+from logger import log_status, log_alert
+
 
 # EN: Warning message helper
 # JP: 警告メッセージ関数
 # KR: 경고 메시지 함수
 
 init(autoreset=True)
+
 
 # EN: CPU warning threshold
 # JP: CPU警告しきい値
@@ -22,6 +25,8 @@ WARNING_THRESHOLD = 75
 CRITICAL_THRESHOLD = 95
 REFRESH_INTERVAL = 5
 
+
+# EN: CPU usage check
 # JP: CPU 使用率チェック
 # KR: CPU 사용량 확인
 
@@ -29,20 +34,33 @@ def get_cpu_usage():
     return psutil.cpu_percent(interval=1)
 
 
+# EN: memory usage check
+# JP: memory 使用率チェック
+# KR: 메모리 사용량 확인
+
 def get_memory_usage():
     memory = psutil.virtual_memory()
     return memory.percent
 
+
+# EN: disk usage check
+# JP: disk使用量チェック
+# KR: disk 사용량 확인
 
 def get_disk_usage():
     disk = psutil.disk_usage("/")
     return disk.percent
 
 
+# EN: system uptime
+# JP: システム稼働時間
+# KR: 시스템 가동 시간
+
 def get_system_uptime():
     uptime_seconds = time.time() - psutil.boot_time()
     uptime_hours = uptime_seconds // 3600
     return int(uptime_hours)
+
 
 # EN: Check monitoring status
 # JP: モニタリング状態確認
@@ -68,6 +86,15 @@ disk_usage = get_disk_usage()
 cpu_status = check_status(cpu_usage)
 memory_status = check_status(memory_usage)
 disk_status = check_status(disk_usage)
+
+
+# EN: Log current monitoring status
+# JP: 現在の監視ステータスをログに記録
+# KR: 현재 모니터링 상태를 로그에 기록
+
+log_status(f"CPU: {cpu_usage}% - {cpu_status}")
+log_status(f"Memory: {memory_usage}% - {memory_status}")
+log_status(f"Disk: {disk_usage}% - {disk_status}")
 
 
 if "WARNING" in cpu_status or "CRITICAL" in cpu_status:
