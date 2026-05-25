@@ -4,6 +4,7 @@ import time
 from datetime import datetime
 from colorama import Fore, Style, init
 from alerts import send_slack_alert
+from email_alerts import send_email_alert
 
 # EN: Warning message helper
 # JP: 警告メッセージ関数
@@ -51,7 +52,7 @@ def get_system_uptime():
 def check_status(value):
 
     if value >= CRITICAL_THRESHOLD:
-        return f"CRITICAL: Usage is near full!!"
+        return f"CRITICAL: Usage is near full !!"
 
     elif value >= WARNING_THRESHOLD:
         return f"WARNING: Usage is over 75%"
@@ -86,6 +87,26 @@ if "WARNING" in disk_status or "CRITICAL" in disk_status:
         f"DISK ALERT: {disk_status}"
     )
 
+if "WARNING" in memory_status or "CRITICAL" in memory_status:
+    send_slack_alert(
+        f"MEMORY ALERT: {memory_status}"
+    )
+
+    send_email_alert(
+        "Memory Alert",
+        f"Memory status triggered an alert: {memory_status}"
+    )
+
+
+if "WARNING" in disk_status or "CRITICAL" in disk_status:
+    send_slack_alert(
+        f"DISK ALERT: {disk_status}"
+    )
+
+    send_email_alert(
+        "Disk Alert",
+        f"Disk status triggered an alert: {disk_status}"
+    )
 
 def get_status_color(status):
     if "OK" in status:

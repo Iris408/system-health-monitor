@@ -40,6 +40,17 @@ docker run system-health-monitor
 
 ---
 
+# Docker Compose 
+
+Run with Docker Compose:
+
+```bash
+docker compose up
+```
+
+---
+
+
 # Project Structure
 
 ```bash
