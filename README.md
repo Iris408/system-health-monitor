@@ -1,5 +1,5 @@
 # System Health Monitor 
-## | システムヘルスモニター| 시스템 상태 모니터|
+## |  システムヘルスモニター |  시스템 상태 모니터 |
 
 A Python-based system monitoring application that tracks CPU, memory, disk usage, and uptime with threshold-based alerts, logging, Docker support, and a FastAPI dashboard.
 
