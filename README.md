@@ -1,11 +1,11 @@
 # System Health Monitor 
-## |  システムヘルスモニター |  시스템 상태 모니터 |
+## |  システムヘルスモニター 
 
 A Python-based system monitoring application that tracks CPU, memory, disk usage, and uptime with threshold-based alerts, logging, Docker support, and a FastAPI dashboard.
 
 ---
 
-## Features | 機能 | 기능
+## Features | 機能 
 
 - CPU, memory, disk, and uptime monitoring
 - Warning and critical threshold detection
@@ -20,7 +20,7 @@ A Python-based system monitoring application that tracks CPU, memory, disk usage
 
 ---
 
-## Tech Stack | 技術スタック | 기술 스택
+## Tech Stack | 技術スタック 
 
 - Python
 - FastAPI
@@ -41,6 +41,18 @@ git clone https://github.com/Iris408/system-health-monitor.git
 cd system-health-monitor
 pip install -r requirements.txt
 python3 main.py
+```
+
+---
+
+## Docker Usage
+
+This project can run inside a Docker container using Docker compose.
+
+### Build and run the container
+
+```bash
+docker compose up --build
 ```
 
 ---

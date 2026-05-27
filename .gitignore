@@ -1,4 +1,7 @@
-__pycache__/
-logs/
-health_log.txt
 .env
+venv/
+__pycache__/
+*.pyc
+logs/
+*.log
+.DS_Store
