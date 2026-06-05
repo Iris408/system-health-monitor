@@ -24,7 +24,7 @@ A Python-based system monitoring application that tracks CPU, memory, disk usage
 
 ## Planned Features | 追加予定の機能
 
-- GitHub Actions CI | GitHub Actions CI | 🚧 Planned 
+- GitHub Actions CI | GitHub Actions CI | 🚧 In progress
 - Dashboard UI improvements | ダッシュボードのUI改善 | 🚧 Planned 
 - Add automated tests | 自動テストを追加 | 🚧 Planned 
 - Add historical monitoring charts | 履歴監視チャートを追加 | 🚧 Planned 
