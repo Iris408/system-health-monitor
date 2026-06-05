@@ -10,24 +10,26 @@ A Python-based system monitoring application that tracks CPU, memory, disk usage
 
 # Features | 機能 
 
-| English | 日本語 | Status
-| --- | --- | --- |
-| CPU, memory, disk, and uptime monitoring | CPU、メモリ、ディスク、稼働時間の監視 | ✅ Complete |
-| Warning and critical threshold detection | 警告および重大なしきい値の検出 | ✅ Complete |
-| Slack alert integration | Slackアラートとの連携 | ✅ Complete |
-| Email alert integration | メールアラートとの連携 | ✅ Complete |
-| Logging support | ログ記録のサポート | ✅ Complete |
-| Docker container support | Dockerコンテナのサポート | ✅ Complete |
-| FastAPI web dashboard | FastAPIウェブダッシュボード | ✅ Complete |
-| `/health` JSON endpoint | `/health` JSONエンドポイント | ✅ Complete |
-| Configurable thresholds using environment variables | 環境変数によるしきい値の設定 | ✅ Complete |
-| EN/JP code comments for learning and review | 学習と復習のための英語/日本語コードコメント | ✅ Complete |
-| GitHub Actions CI | GitHub Actions CI | 🚧 Planned |
-| Dashboard UI improvements | ダッシュボードのUI改善 | 🚧 Planned |
-| Add automated tests | 自動テストを追加 | 🚧 Planned |
-| Add historical monitoring charts | 履歴監視チャートを追加 | 🚧 Planned |
-| Add log filtering | ログフィルタリングを追加 | 🚧 Planned |
-| Add deployment documentation | デプロイメントドキュメントを追加 | 🚧 Planned |
+| English | 日本語 | Status |
+- CPU, memory, disk, and uptime monitoring | CPU、メモリ、ディスク、稼働時間の監視 | ✅ Complete 
+- Warning and critical threshold detection | 警告および重大なしきい値の検出 | ✅ Complete 
+- Slack alert integration | Slackアラートとの連携 | ✅ Complete 
+- Email alert integration | メールアラートとの連携 | ✅ Complete 
+- Logging support | ログ記録のサポート | ✅ Complete 
+- Docker container support | Dockerコンテナのサポート | ✅ Complete 
+- FastAPI web dashboard | FastAPIウェブダッシュボード | ✅ Complete 
+- `/health` JSON endpoint | `/health` JSONエンドポイント | ✅ Complete 
+- Configurable thresholds using environment variables | 環境変数によるしきい値の設定 | ✅ Complete 
+- EN/JP code comments for learning and review | 学習と復習のための英語/日本語コードコメント | ✅ Complete 
+
+## Planned Features | 追加予定の機能
+
+- GitHub Actions CI | GitHub Actions CI | 🚧 Planned 
+- Dashboard UI improvements | ダッシュボードのUI改善 | 🚧 Planned 
+- Add automated tests | 自動テストを追加 | 🚧 Planned 
+- Add historical monitoring charts | 履歴監視チャートを追加 | 🚧 Planned 
+- Add log filtering | ログフィルタリングを追加 | 🚧 Planned 
+- Add deployment documentation | デプロイメントドキュメントを追加 | 🚧 Planned 
 
 ## Sample Log Output / サンプルログ出力
 A safe sample monitoring log is available here:
